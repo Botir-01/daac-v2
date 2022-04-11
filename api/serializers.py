@@ -46,7 +46,7 @@ class PartnerSerializer(serializers.ModelSerializer):
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ['title', 'logo_url', 'image_url', 'icon_url']
+        fields = ['title']
 
 
 class ServiceCategorySerializer(serializers.ModelSerializer):

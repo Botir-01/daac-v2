@@ -124,27 +124,9 @@ class ServiceCategory(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length=255)
-    logo = models.ImageField(upload_to='uploads/service')
-    icon = models.ImageField(upload_to='uploads/service')
-    image = models.ImageField(upload_to='uploads/service')
     service_category_id = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='service')
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
-    @property
-    def logo_url(self):
-        if self.logo:
-            return "%s%s" % (settings.HOST, self.logo.url)
-
-    @property
-    def icon_url(self):
-        if self.icon:
-            return "%s%s" % (settings.HOST, self.icon.url)
-
-    @property
-    def image_url(self):
-        if self.image:
-            return "%s%s" % (settings.HOST, self.image.url)
 
     def __str__(self):
         return self.title
