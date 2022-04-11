@@ -124,7 +124,7 @@ class ServiceCategory(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length=255)
-    service_category_id = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='service')
+    service_category_id = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='services')
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -139,7 +139,7 @@ class Stage(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     icon = models.ImageField(upload_to='uploads/stage')
-    service_category_id = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='stage')
+    service_category_id = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='stages')
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -171,7 +171,7 @@ class Project(models.Model):
     title = models.CharField(max_length=500)
     link = models.URLField(blank=True, null=True)
     image = models.ImageField(upload_to='uploads/project')
-    project_category_id = models.ForeignKey(ProjectCategory, on_delete=models.CASCADE, related_name='project')
+    project_category_id = models.ForeignKey(ProjectCategory, on_delete=models.CASCADE, related_name='projects')
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -218,7 +218,7 @@ class Task(models.Model):
     title = models.CharField(max_length=500)
     description = models.TextField()
     icon = models.ImageField(upload_to='uploads/direction')
-    direction_category_id = models.ForeignKey(DirectionCategory, on_delete=models.CASCADE, related_name='task')
+    direction_category_id = models.ForeignKey(DirectionCategory, on_delete=models.CASCADE, related_name='tasks')
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
