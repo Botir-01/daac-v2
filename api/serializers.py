@@ -20,7 +20,7 @@ class MenuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Menu
-        fields = ['id', 'title', 'url', 'child'],
+        fields = ['id', 'title', 'url', 'child']
 
     def get_child(self, obj):
         sub_menu = Menu.objects.filter(parent=obj)
