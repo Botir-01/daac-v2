@@ -26,7 +26,7 @@ class Menu(models.Model):
 
 class MainPageSettings(models.Model):
     logo_title = models.CharField(max_length=200)
-    logo = models.ImageField(upload_to='uploads/settings')
+    logo = models.FileField(upload_to='uploads/settings')
     poster_title = models.CharField(max_length=200)
     poster_description = models.CharField(max_length=500)
     instagram_link = models.URLField()
