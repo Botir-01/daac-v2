@@ -227,6 +227,9 @@ class Task(models.Model):
         if self.icon:
             return "%s%s" % (settings.HOST, self.icon.url)
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         db_table = 'task'
 
