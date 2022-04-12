@@ -99,7 +99,7 @@ class AboutSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = ['description', 'phone_number', 'foundation_date', 'clients_number', 'employee_number',
-                  'projects_number', 'technical_support', 'short_video'
+                  'projects_number', 'technical_support', 'short_video_url'
                   ]
 
 
