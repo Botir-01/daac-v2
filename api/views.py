@@ -6,7 +6,8 @@ from .models import Menu, MainPageSettings, Partner, ServiceCategory, ProjectCat
 from .serializers import MenuSerializer, MainPageSerializer, PartnerSerializer, ServiceCategorySerializer, \
                     ServiceCategoryMainSerializer, DirectionCategoryMainSerializer, FooterSerializer, \
                     ProjectCategorySerializer, AboutSerializer, EmployeeSerializer, ContactsSerializer, \
-                    FeedbackSerializer, ServicePageSerializer, DirectionSerializer, ApplicationSerializer
+                    FeedbackSerializer, ServicePageSerializer, DirectionSerializer, ApplicationSerializer, \
+                    AboutMainSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 
@@ -31,11 +32,13 @@ class MainPageView(CustomModalViewSet):
         object_serializer = MenuSerializer
         service_categories = ServiceCategory.objects.all()
         direction_categories = DirectionCategory.objects.all()
+        about = Contact.objects.all()
         payload = {
             'site': serializer(instance).data,
             'service_categories': ServiceCategoryMainSerializer(service_categories, many=True).data,
             'menu': object_serializer(obj, many=True).data,
-            'directions': DirectionCategoryMainSerializer(direction_categories, many=True).data
+            'directions': DirectionCategoryMainSerializer(direction_categories, many=True).data,
+            'about': AboutMainSerializer(about, many=True).data
         }
         return Response(payload)
 

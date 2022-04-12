@@ -149,3 +149,10 @@ class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
         fields = ['name', 'phone_number', 'email', 'message', 'file']
+
+
+class AboutMainSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Contact
+        fields = ['description', 'phone_number']
