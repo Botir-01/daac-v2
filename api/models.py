@@ -270,7 +270,7 @@ class Feedback(models.Model):
 
 class Employee(models.Model):
     first_name = models.CharField(max_length=255)
-    second_name = models.CharField(max_length=255)
+    second_name = models.CharField(max_length=255, blank=True, default='')
     title = models.CharField(max_length=500)
     image = models.ImageField(upload_to='uploads/employee')
     updated_at = models.DateTimeField(auto_now=True)
