@@ -1,12 +1,12 @@
 from decouple import config
-from base import *
+from daac.base import *
 
 
 if config('ENV_NAME') == 'production':
-    from production import *
+    from daac.production import *
 elif config('ENV_NAME') == 'local':
-    from local import *
+    from daac.local import *
 elif config('ENV_NAME') == 'staging':
-    from staging import *
+    from daac.staging import *
 else:
     print('No environment chosen!')
