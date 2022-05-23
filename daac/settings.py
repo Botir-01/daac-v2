@@ -1,13 +1,12 @@
-from .base import *
-import os
 from decouple import config
+from base import *
 
 
 if config('ENV_NAME') == 'production':
-    from .production import *
+    from production import *
 elif config('ENV_NAME') == 'local':
-    from .local import *
+    from local import *
 elif config('ENV_NAME') == 'staging':
-    from .staging import *
+    from staging import *
 else:
     print('No environment chosen!')
