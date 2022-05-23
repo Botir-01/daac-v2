@@ -20,7 +20,7 @@ from django.conf import settings
 from rest_framework.schemas import get_schema_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('a-panel/', admin.site.urls),
     path('v1/api/', include('api.urls')),
     path('v1/openapi', get_schema_view(
         title='DAAC',
