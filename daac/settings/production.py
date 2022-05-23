@@ -1,5 +1,5 @@
 from decouple import config
-DEBUG = config('DEBUG') == 'False'
+DEBUG = config('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['backend.daac.uz']
 
