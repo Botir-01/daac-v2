@@ -1,5 +1,3 @@
-import os
-from .base import BASE_DIR
 from decouple import config
 DEBUG = config('DEBUG')
 

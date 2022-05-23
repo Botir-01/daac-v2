@@ -1,7 +1,7 @@
 from decouple import config
-DEBUG = False
+DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['backend.daac.uz']
 
 DATABASES = {
     'default': {

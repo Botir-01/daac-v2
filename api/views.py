@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import viewsets, generics, status
 from .models import Menu, MainPageSettings, Partner, ServiceCategory, ProjectCategory, DirectionCategory, Application,\
